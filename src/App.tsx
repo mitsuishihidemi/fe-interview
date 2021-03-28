@@ -1,11 +1,15 @@
 import React from "react";
+import { Provider } from "react-redux";
 import { ThemeProvider } from "@emotion/react";
 import theme from "./theme";
-import Merchants from "./pages/merchants";
+import Merchants from "./features/merchants";
+import store from "./store";
 
 const App: React.FunctionComponent = () => (
   <ThemeProvider theme={theme}>
-    <Merchants />
+    <Provider store={store}>
+      <Merchants />
+    </Provider>
   </ThemeProvider>
 );
 
