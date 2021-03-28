@@ -1,21 +1,24 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMerchants } from "./merchantSlice";
-import { RootState } from "../../store";
+import { shouldFetchMerchants } from "./merchantSelectors";
+import Container from "../../components/grid/Container";
 
 const Merchants: React.FC = () => {
   const dispatch = useDispatch();
-  const merchantStatus = useSelector(
-    (state: RootState) => state.merchants.status
-  );
+  const shouldFetch = useSelector(shouldFetchMerchants);
 
   useEffect(() => {
-    if (merchantStatus === "idle") {
+    if (shouldFetch) {
       dispatch(fetchMerchants());
     }
-  }, [dispatch, merchantStatus]);
+  }, [dispatch, shouldFetch]);
 
-  return <h1>Merchants</h1>;
+  return (
+    <Container>
+      <h1>Merchants</h1>
+    </Container>
+  );
 };
 
 export default Merchants;

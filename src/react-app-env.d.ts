@@ -1,11 +1,8 @@
+/// <reference types="react-scripts" />
+
 import "@emotion/react";
+import { ControlTheme } from "./components/theme/theme";
 
 declare module "@emotion/react" {
-  export interface Theme {
-    colors: {
-      primary: string;
-    };
-  }
+  export interface Theme extends ControlTheme {}
 }
-
-/// <reference types="react-scripts" />
