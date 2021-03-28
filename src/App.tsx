@@ -4,7 +4,7 @@ import ThemeProvider from "./components/theme/ThemeProvider";
 import Merchants from "./pages/merchants";
 import store from "./store";
 
-const App: React.FunctionComponent = () => (
+const App: React.FC = () => (
   <ThemeProvider>
     <Provider store={store}>
       <Merchants />

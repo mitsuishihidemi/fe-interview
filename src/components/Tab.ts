@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 
-export const TabContainer = styled.div``;
+export const TabContainer = styled.div`
+  margin-bottom: 1rem;
+`;
 
 interface TabInterface {
   selected?: boolean;

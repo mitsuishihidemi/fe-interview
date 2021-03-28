@@ -14,7 +14,7 @@ export const FilterContext = React.createContext<ContextInterface>(
   defaultContextInteface
 );
 
-const FilterProvider: React.FunctionComponent = ({ children }) => {
+const FilterProvider: React.FC = ({ children }) => {
   const [isBill, setIsBill] = useState(true);
 
   return (

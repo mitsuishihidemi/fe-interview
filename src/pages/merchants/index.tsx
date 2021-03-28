@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchCategories } from "../../features/categories/categorySlice";
+import { selectShouldFetchCategories } from "../../features/categories/categorySelectors";
 import { fetchMerchants } from "../../features/merchants/merchantSlice";
-import { shouldFetchMerchants } from "../../features/merchants/merchantSelectors";
+import { selectShouldFetchMerchants } from "../../features/merchants/merchantSelectors";
 import Container from "../../components/grid/Container";
 import FilterProvider from "./FilterProvider";
 import FilterSelector from "./FilterSelector";
@@ -9,13 +11,20 @@ import MerchantList from "./MerchantList";
 
 const Merchants: React.FC = () => {
   const dispatch = useDispatch();
-  const shouldFetch = useSelector(shouldFetchMerchants);
+  const shouldFetchMerchants = useSelector(selectShouldFetchMerchants);
+  const shouldFetchCategories = useSelector(selectShouldFetchCategories);
 
   useEffect(() => {
-    if (shouldFetch) {
+    if (shouldFetchMerchants) {
       dispatch(fetchMerchants());
     }
-  }, [dispatch, shouldFetch]);
+  }, [dispatch, shouldFetchMerchants]);
+
+  useEffect(() => {
+    if (shouldFetchCategories) {
+      dispatch(fetchCategories());
+    }
+  }, [dispatch, shouldFetchCategories]);
 
   return (
     <Container>

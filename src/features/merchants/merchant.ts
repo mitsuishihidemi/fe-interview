@@ -6,6 +6,7 @@ export interface Transaction {
 
 export interface Merchant {
   categoryId: number;
+  category?: string;
   iconUrl: string;
   id: string;
   isBill: boolean;

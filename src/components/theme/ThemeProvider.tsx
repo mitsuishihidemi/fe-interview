@@ -20,7 +20,7 @@ const styles = css`
   }
 `;
 
-const ThemeProvider: React.FunctionComponent = ({ children }) => {
+const ThemeProvider: React.FC = ({ children }) => {
   return (
     <Provider theme={theme}>
       <Global styles={styles} />

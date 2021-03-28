@@ -4,25 +4,20 @@ import {
   createEntityAdapter,
 } from "@reduxjs/toolkit";
 import { Merchant } from "./merchant";
+import { SliceState, defaultInitialState } from "../../types/shared";
 
 export const fetchMerchants = createAsyncThunk("fetchMerchants", async () => {
   const response = await fetch("/merchants").then((data) => data.json());
   return response as Merchant[];
 });
 
-interface SliceState {
-  status: "idle" | "pending" | "succeeded" | "failed";
-  error: string | null;
-}
-
 export const merchantAdapter = createEntityAdapter<Merchant>({
   selectId: (merchant) => merchant.id,
 });
 
-const initialState = merchantAdapter.getInitialState<SliceState>({
-  status: "idle",
-  error: null,
-});
+const initialState = merchantAdapter.getInitialState<SliceState>(
+  defaultInitialState
+);
 
 export const merchantSlice = createSlice({
   name: "merchants",
