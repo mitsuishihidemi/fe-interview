@@ -3,7 +3,7 @@ import {
   createAsyncThunk,
   createEntityAdapter,
 } from "@reduxjs/toolkit";
-import { Merchant } from "../../entities/merchant";
+import { Merchant } from "./merchant";
 
 export const fetchMerchants = createAsyncThunk("fetchMerchants", async () => {
   const response = await fetch("/merchants").then((data) => data.json());
@@ -15,7 +15,7 @@ interface SliceState {
   error: string | null;
 }
 
-const merchantAdapter = createEntityAdapter<Merchant>({
+export const merchantAdapter = createEntityAdapter<Merchant>({
   selectId: (merchant) => merchant.id,
 });
 

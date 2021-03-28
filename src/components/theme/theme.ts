@@ -4,6 +4,7 @@ export interface ControlTheme {
     transparent: string;
     black: string;
     white: string;
+    grey: string;
   };
   breakpoints: {
     sm: string;
@@ -18,6 +19,7 @@ const theme: ControlTheme = {
     transparent: "transparent",
     black: "#000000",
     white: "#FFFFFF",
+    grey: "rgb(176, 176, 176)",
   },
   breakpoints: {
     sm: "30em",

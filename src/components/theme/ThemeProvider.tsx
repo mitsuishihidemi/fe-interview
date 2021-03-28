@@ -14,12 +14,13 @@ const styles = css`
   }
 
   code {
+    font-size: 16px;
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
       monospace;
   }
 `;
 
-const ThemeProvider: React.FC = ({ children }) => {
+const ThemeProvider: React.FunctionComponent = ({ children }) => {
   return (
     <Provider theme={theme}>
       <Global styles={styles} />
