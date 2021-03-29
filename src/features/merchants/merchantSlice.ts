@@ -3,7 +3,7 @@ import {
   createAsyncThunk,
   createEntityAdapter,
 } from "@reduxjs/toolkit";
-import { Merchant } from "./merchant";
+import { Merchant } from "../../types/merchant";
 import { SliceState, defaultInitialState } from "../../types/shared";
 
 export const fetchMerchants = createAsyncThunk("fetchMerchants", async () => {

@@ -16,13 +16,14 @@ export const Tab = styled.button<TabInterface>(({ theme, selected }) => {
       background-color: ${theme.colors.transparent};`;
 
   return `
+    border-radius: ${theme.borderRadius.default};
+    border-width: 0;
+    box-sizing: border-box;
     cursor: pointer;
     font-size: ${theme.fontSizes.sm};
-    padding: ${`${theme.spacings.sm} ${theme.spacings.md}`};
-    box-sizing: border-box;
-    border-radius: ${theme.borderRadius.default};
+    margin-right: ${theme.spacings.sm};
+    padding: ${theme.spacings.sm} ${theme.spacings.md};
     transition: all 0.3s ease;
-    border-width: 0;
-    margin-right: ${theme.spacings.md};
-    ${selectedProps}`;
+    ${selectedProps}
+  `;
 });

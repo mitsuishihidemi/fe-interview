@@ -3,6 +3,10 @@ import { Global, css, ThemeProvider as Provider } from "@emotion/react";
 import theme from "./theme";
 
 const styles = css`
+  html {
+    font-size: 100%;
+  }
+
   body {
     margin: 0;
     padding: 0;
@@ -14,7 +18,6 @@ const styles = css`
   }
 
   code {
-    font-size: 16px;
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
       monospace;
   }

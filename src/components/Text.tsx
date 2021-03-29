@@ -9,9 +9,10 @@ type TextProps = {
 
 const Text = styled(Space)<TextProps & SpaceProps>(
   ({ theme, fontSize = "sm", bold = false, display = "block" }) => `
-  display: ${display};
-  font-size: ${theme.fontSizes[fontSize]};
-  font-weight: ${bold ? theme.fontWeights.bold : theme.fontWeights.normal};`
+    display: ${display};
+    font-size: ${theme.fontSizes[fontSize]};
+    font-weight: ${bold ? theme.fontWeights.bold : theme.fontWeights.normal};
+  `
 );
 
 export default Text;

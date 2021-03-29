@@ -3,7 +3,7 @@ import {
   createAsyncThunk,
   createEntityAdapter,
 } from "@reduxjs/toolkit";
-import { Category } from "./category";
+import { Category } from "../../types/category";
 import { SliceState, defaultInitialState } from "../../types/shared";
 
 export const fetchCategories = createAsyncThunk("fetchCategories", async () => {

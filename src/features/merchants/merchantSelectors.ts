@@ -2,7 +2,7 @@ import { createSelector } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
 import { merchantAdapter } from "./merchantSlice";
 import { categorySelectors } from "../categories/categorySelectors";
-import { Merchant } from "./merchant";
+import { Merchant } from "../../types/merchant";
 
 export const merchantSelectors = merchantAdapter.getSelectors<RootState>(
   (state) => state.merchants

@@ -14,9 +14,10 @@ export type SpaceProps = {
 
 const Space = styled.div<SpaceProps>(
   ({ theme, margin = "0", padding = "0" }) => `
-  display: inline-block;
-  margin: ${replaceSpacing(margin, theme)};
-  padding: ${replaceSpacing(padding, theme)};`
+    display: inline-block;
+    margin: ${replaceSpacing(margin, theme)};
+    padding: ${replaceSpacing(padding, theme)};
+  `
 );
 
 export default Space;
