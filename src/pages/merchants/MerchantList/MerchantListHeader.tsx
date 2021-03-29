@@ -5,7 +5,10 @@ import Text from "../../../components/Text";
 
 const TableMerchantHeader = styled(TableHeader)(
   ({ theme }) => `
+    display: none;
+
     @media (min-width: ${theme.breakpoints.lg}) {
+      display: grid;
       grid-template-areas: "avatar name category transactions actions";
       grid-template-columns: 50px 1fr 1fr 1fr 60px;
       padding: ${theme.spacings.md};

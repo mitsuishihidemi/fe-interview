@@ -11,7 +11,7 @@ const FilterSelector: React.FC = () => {
         Bills
       </Tab>
       <Tab selected={!isBill} onClick={() => setIsBill(false)}>
-        Others
+        Potential Bills
       </Tab>
     </TabContainer>
   );

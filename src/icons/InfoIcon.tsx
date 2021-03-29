@@ -1,6 +1,6 @@
 import React from "react";
 
-const IconInfo: React.FC = () => (
+const InfoIcon: React.FC = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -12,4 +12,4 @@ const IconInfo: React.FC = () => (
   </svg>
 );
 
-export default IconInfo;
+export default InfoIcon;

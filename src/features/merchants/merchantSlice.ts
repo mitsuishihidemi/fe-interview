@@ -2,6 +2,8 @@ import {
   createSlice,
   createAsyncThunk,
   createEntityAdapter,
+  isPending,
+  isRejected,
 } from "@reduxjs/toolkit";
 import { Merchant } from "../../types/merchant";
 import { SliceState, defaultInitialState } from "../../types/shared";
@@ -10,6 +12,20 @@ export const fetchMerchants = createAsyncThunk("fetchMerchants", async () => {
   const response = await fetch("/merchants").then((data) => data.json());
   return response as Merchant[];
 });
+
+export const updateMerchant = createAsyncThunk(
+  "updateMerchant",
+  async (merchant: Merchant) => {
+    const response = await fetch(`/merchants/${merchant.id}`, {
+      method: "PATCH",
+      body: JSON.stringify(merchant),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((data) => data.json());
+    return response as Merchant;
+  }
+);
 
 export const merchantAdapter = createEntityAdapter<Merchant>({
   selectId: (merchant) => merchant.id,
@@ -24,19 +40,30 @@ export const merchantSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchMerchants.pending, (state) => {
-      state.status = "pending";
-    });
-
     builder.addCase(fetchMerchants.fulfilled, (state, action) => {
       state.status = "succeeded";
       merchantAdapter.setAll(state, action.payload);
     });
 
-    builder.addCase(fetchMerchants.rejected, (state, action) => {
-      state.status = "failed";
-      state.error = action.error.message || null;
+    builder.addCase(updateMerchant.fulfilled, (state, action) => {
+      state.status = "succeeded";
+      merchantAdapter.updateOne(state, {
+        id: action.payload.id,
+        changes: action.payload,
+      });
     });
+
+    builder.addMatcher(isPending(fetchMerchants, updateMerchant), (state) => {
+      state.status = "pending";
+    });
+
+    builder.addMatcher(
+      isRejected(fetchMerchants, updateMerchant),
+      (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message || null;
+      }
+    );
   },
 });
 

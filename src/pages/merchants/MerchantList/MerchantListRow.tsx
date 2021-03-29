@@ -4,12 +4,13 @@ import Avatar from "../../../components/Avatar";
 import Text from "../../../components/Text";
 import Space from "../../../components/Space";
 import IconButton from "../../../components/IconButton";
-import IconDelete from "../../../icons/IconDelete";
-import IconInfo from "../../../icons/IconInfo";
+import IconDelete from "../../../icons/DeleteIcon";
+import IconInfo from "../../../icons/InfoIcon";
 import { Merchant } from "../../../types/merchant";
 import { getTotalTransacionsByMerchant } from "../../../features/merchants/merchantUtils";
 import { TableRow, TableColumn } from "../../../components/Table";
 import TransactionList from "./TransactionList";
+import ToggleBillButton from "./ToggleBillButton";
 
 const TableMerchantRow = styled(TableRow)(
   ({ theme }) => `
@@ -57,12 +58,13 @@ const MerchantListRow: React.FC<MerchantListRowProps> = ({ merchant }) => {
       </TableColumn>
       <TableColumn gridArea="actions">
         <IconButton
-          aria-label="more details"
+          title="See transactions"
+          aria-label="See transactions"
           icon={IconInfo}
           onClick={() => setShowDetails(!showDetails)}
         />
         <Space margin="0 sm 0 0" />
-        <IconButton aria-label="delete merchant" icon={IconDelete} />
+        <ToggleBillButton merchant={merchant} />
       </TableColumn>
       {showDetails && (
         <TableColumn gridArea="details">

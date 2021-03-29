@@ -13,14 +13,10 @@ export const Table = styled.div(
 
 export const TableHeader = styled.div(
   ({ theme }) => `
-    display: none;
-
-    @media (min-width: ${theme.breakpoints.lg}) {
-      align-items: center;
-      border-bottom: ${theme.border};
-      display: grid;    
-      grid-column-gap: 1rem;      
-    }
+    align-items: center;
+    border-bottom: ${theme.border};
+    display: grid;    
+    grid-column-gap: 1rem;    
   `
 );
 

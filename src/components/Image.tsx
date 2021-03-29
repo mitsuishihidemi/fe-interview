@@ -19,6 +19,7 @@ const Image: React.FC<ImageProps> = ({
   const imageSrc = src || fallbackImage;
 
   const handleError = (event: React.BaseSyntheticEvent) => {
+    event.preventDefault();
     event.target.src = fallbackImage;
   };
 

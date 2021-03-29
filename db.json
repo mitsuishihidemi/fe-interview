@@ -4,7 +4,7 @@
       "categoryId": 1,
       "iconUrl": "https://pbs.twimg.com/profile_images/1151788824093188097/wHfb5mYZ_bigger.png",
       "id": "5a5caa1efe33900100fd8ed5",
-      "isBill": false,
+      "isBill": true,
       "name": "Vodafone",
       "transactions": [
         {
@@ -32,41 +32,11 @@
           "date": "2018-05-13",
           "id": 40
         }
-      ]
+      ],
+      "category": "Phone"
     },
     {
-      "categoryId": 2,
-      "iconUrl": "https://pbs.twimg.com/profile_images/1280004967726751744/1YFw1Bdu_bigger.jpg",
-      "id": "5a5caa8efe33900100fd8ed6",
-      "isBill": true,
-      "name": "Sky TV",
-      "transactions": [
-        {
-          "amount": 82.17,
-          "date": "2018-01-01",
-          "id": 41
-        },
-        {
-          "amount": 82.17,
-          "date": "2018-02-01",
-          "id": 42
-        },
-        {
-          "amount": 82.17,
-          "date": "2018-03-01",
-          "id": 43
-        },
-        {
-          "amount": 82.17,
-          "date": "2018-04-01",
-          "id": 44
-        },
-        {
-          "amount": 82.17,
-          "date": "2018-05-01",
-          "id": 45
-        }
-      ]
+      "id": "5a5caa8efe33900100fd8ed6"
     },
     {
       "categoryId": 3,
@@ -100,7 +70,8 @@
           "date": "2018-05-01",
           "id": 5
         }
-      ]
+      ],
+      "category": "Bank Charges"
     },
     {
       "categoryId": 2,
@@ -134,13 +105,14 @@
           "date": "2018-05-02",
           "id": 10
         }
-      ]
+      ],
+      "category": "TV"
     },
     {
       "categoryId": 3,
       "iconUrl": null,
       "id": "5a5cab3bfe33900100fd8ed9",
-      "isBill": true,
+      "isBill": false,
       "name": "Transfer to flatmate",
       "transactions": [
         {
@@ -168,7 +140,8 @@
           "date": "2018-05-02",
           "id": 15
         }
-      ]
+      ],
+      "category": "Bank Charges"
     },
     {
       "categoryId": 3,
@@ -202,13 +175,14 @@
           "date": "2018-05-22",
           "id": 20
         }
-      ]
+      ],
+      "category": "Bank Charges"
     },
     {
       "categoryId": 4,
       "iconUrl": "https://pbs.twimg.com/profile_images/1283078790076403713/cNZHuaOx_bigger.jpg",
       "id": "5a5cabd4fe33900100fd8edb",
-      "isBill": true,
+      "isBill": false,
       "name": "TFL",
       "transactions": [
         {
@@ -236,7 +210,8 @@
           "date": "2018-05-02",
           "id": 25
         }
-      ]
+      ],
+      "category": "Transport"
     },
     {
       "categoryId": 5,
@@ -270,13 +245,14 @@
           "date": "2018-07-02",
           "id": 30
         }
-      ]
+      ],
+      "category": "Groceries"
     },
     {
       "categoryId": 4,
       "iconUrl": "https://pbs.twimg.com/profile_images/1145605208610889729/C7EH0Qyi_bigger.png",
       "id": "328card4fe33900100fd8ail",
-      "isBill": false,
+      "isBill": true,
       "name": "Uber",
       "transactions": [
         {
@@ -304,7 +280,8 @@
           "date": "2018-05-02",
           "id": 35
         }
-      ]
+      ],
+      "category": "Transport"
     }
   ],
   "categories": [
