@@ -21,7 +21,7 @@ export const Tab = styled.button<TabInterface>(({ theme, selected }) => {
     padding: ${`${theme.spacings.sm} ${theme.spacings.md}`};
     box-sizing: border-box;
     border-radius: ${theme.borderRadius.default};
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     border-width: 0;
     margin-right: ${theme.spacings.md};
     ${selectedProps}`;

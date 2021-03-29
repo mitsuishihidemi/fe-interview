@@ -9,6 +9,7 @@ import Space from "../../components/Space";
 import FilterProvider from "./FilterProvider";
 import FilterSelector from "./FilterSelector";
 import MerchantList from "./MerchantList";
+import Text from "../../components/Text";
 
 const Merchants: React.FC = () => {
   const dispatch = useDispatch();
@@ -29,10 +30,12 @@ const Merchants: React.FC = () => {
 
   return (
     <Container>
-      <h1>Merchants</h1>
+      <Text as="h1" fontSize="lg" bold margin="lg 0">
+        Merchants
+      </Text>
       <FilterProvider>
         <FilterSelector />
-        <Space margin="0 0 lg" />
+        <Space margin="0 0 md" />
         <MerchantList />
       </FilterProvider>
     </Container>

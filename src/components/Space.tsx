@@ -3,9 +3,9 @@ import { ThemeInterface } from "./theme/theme";
 
 const replaceSpacing = (spacing: string, theme: ThemeInterface) =>
   spacing
-    .replace(/sm/g, theme.fontSizes.sm)
-    .replace(/md/g, theme.fontSizes.md)
-    .replace(/lg/g, theme.fontSizes.lg);
+    .replace(/sm/g, theme.spacings.sm)
+    .replace(/md/g, theme.spacings.md)
+    .replace(/lg/g, theme.spacings.lg);
 
 export type SpaceProps = {
   margin?: string;
@@ -14,6 +14,7 @@ export type SpaceProps = {
 
 const Space = styled.div<SpaceProps>(
   ({ theme, margin = "0", padding = "0" }) => `
+  display: inline-block;
   margin: ${replaceSpacing(margin, theme)};
   padding: ${replaceSpacing(padding, theme)};`
 );

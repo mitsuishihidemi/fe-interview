@@ -64,7 +64,7 @@ const theme: ThemeInterface = {
   },
 
   fontSizes: {
-    xs: "0.75rem",
+    xs: "0.9rem",
     sm: "1rem",
     md: "1.5rem",
     lg: "2rem",
