@@ -5,10 +5,10 @@ import {
 } from "@reduxjs/toolkit";
 import { Category } from "../../types/category";
 import { SliceState, defaultInitialState } from "../../types/shared";
+import { getData } from "../../utils/fetch";
 
 export const fetchCategories = createAsyncThunk("fetchCategories", async () => {
-  const response = await fetch("/categories").then((data) => data.json());
-  return response as Category[];
+  return (await getData("/categories")) as Category[];
 });
 
 export const categoryAdapter = createEntityAdapter<Category>({

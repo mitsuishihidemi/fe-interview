@@ -7,14 +7,13 @@ const Wrapper = styled.div(
     background-color: ${theme.colors.lightGrey};
     border-radius: ${theme.borderRadius.default};
     border: ${theme.border};
-    padding: ${theme.spacings.lg};
-    text-align: center;
+    padding: ${theme.spacings.lg};    
   `
 );
 
 const NotFound: React.FC = () => (
   <Wrapper>
-    <Text as="h2" fontSize="md">
+    <Text fontSize="md" textAlign="center" bold>
       No Merchants found{" "}
       <span role="img" aria-label="Crying Face">
         😢

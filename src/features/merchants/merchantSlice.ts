@@ -7,23 +7,16 @@ import {
 } from "@reduxjs/toolkit";
 import { Merchant } from "../../types/merchant";
 import { SliceState, defaultInitialState } from "../../types/shared";
+import { getData, patchData } from "../../utils/fetch";
 
 export const fetchMerchants = createAsyncThunk("fetchMerchants", async () => {
-  const response = await fetch("/merchants").then((data) => data.json());
-  return response as Merchant[];
+  return (await getData("/merchants")) as Merchant[];
 });
 
 export const updateMerchant = createAsyncThunk(
   "updateMerchant",
   async (merchant: Merchant) => {
-    const response = await fetch(`/merchants/${merchant.id}`, {
-      method: "PATCH",
-      body: JSON.stringify(merchant),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((data) => data.json());
-    return response as Merchant;
+    return (await patchData(`/merchants/${merchant.id}`, merchant)) as Merchant;
   }
 );
 

@@ -6,6 +6,7 @@ import FilterSelector from "./FilterSelector";
 import Merchants from "./Merchants";
 import Space from "../../components/Space";
 import Text from "../../components/Text";
+import Footer from "../../components/Footer";
 
 const MerchantsPage: React.FC = () => {
   useFetchInitialData();
@@ -20,6 +21,7 @@ const MerchantsPage: React.FC = () => {
         <Space margin="0 0 md" />
         <Merchants />
       </FilterProvider>
+      <Footer />
     </Container>
   );
 };

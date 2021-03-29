@@ -4,7 +4,6 @@ import Avatar from "../../../components/Avatar";
 import Text from "../../../components/Text";
 import Space from "../../../components/Space";
 import IconButton from "../../../components/IconButton";
-import IconDelete from "../../../icons/DeleteIcon";
 import IconInfo from "../../../icons/InfoIcon";
 import { Merchant } from "../../../types/merchant";
 import { getTotalTransacionsByMerchant } from "../../../features/merchants/merchantUtils";

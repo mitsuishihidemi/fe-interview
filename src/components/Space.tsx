@@ -10,16 +10,18 @@ const replaceSpacing = (spacing: string, theme: ThemeInterface) =>
 export type SpaceProps = {
   margin?: string;
   padding?: string;
+  fullWidth?: boolean;
 };
 
 // I made a simplified version of Space because is a MVP, otherwise
 // I would include other attributes to make it more flexible
 const Space = styled.div<SpaceProps>(
-  ({ theme, margin = "0", padding = "0" }) => `
+  ({ theme, margin = "0", padding = "0", fullWidth }) => `
     box-sizing: border-box;
     display: inline-block;
     margin: ${replaceSpacing(margin, theme)};
     padding: ${replaceSpacing(padding, theme)};    
+    ${fullWidth && "width: 100%;"}
   `
 );
 
