@@ -1,9 +1,4 @@
-export interface Transaction {
-  amount: number;
-  date: string;
-  id: number;
-}
-
+import { Transaction } from "./transaction";
 export interface Merchant {
   categoryId: number;
   category?: string;

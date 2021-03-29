@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const Wrapper = styled.div(
+export const Table = styled.div(
   ({ theme }) => `
     border-radius: ${theme.borderRadius.default};
     border: ${theme.border};
@@ -10,7 +10,7 @@ export const Wrapper = styled.div(
   `
 );
 
-export const GridContainer = styled.div(
+export const TableRow = styled.div(
   ({ theme }) => `  
     align-items: center;
     border-bottom: ${theme.border};
@@ -21,7 +21,7 @@ export const GridContainer = styled.div(
       'avatar  name     transactions actions'
       'avatar  category transactions actions'
       'details details  details      details';    
-    grid-template-columns: 50px auto 100px 60px;    
+    grid-template-columns: 50px auto 60px 60px;    
     padding: ${theme.spacings.md};
     transition: background-color 0.3s ease;  
     
@@ -42,7 +42,7 @@ export const GridContainer = styled.div(
   `
 );
 
-export const GridContainerHeader = styled.div(
+export const TableHeader = styled.div(
   ({ theme }) => `
     display: none;
 
@@ -58,11 +58,11 @@ export const GridContainerHeader = styled.div(
   `
 );
 
-type GridItemProps = {
+type TableColumnProps = {
   gridArea: string;
 };
 
-export const GridItem = styled.div<GridItemProps>(
+export const TableColumn = styled.div<TableColumnProps>(
   ({ gridArea }) => `    
     grid-area: ${gridArea};
   `

@@ -1,27 +1,38 @@
 import React from "react";
-import { GridContainerHeader, GridItem } from "./index.styles";
+import styled from "@emotion/styled";
+import { TableHeader, TableColumn } from "../../../components/Table";
 import Text from "../../../components/Text";
 
+const TableMerchantHeader = styled(TableHeader)(
+  ({ theme }) => `
+    @media (min-width: ${theme.breakpoints.lg}) {
+      grid-template-areas: "avatar name category transactions actions";
+      grid-template-columns: 50px 1fr 1fr 1fr 60px;
+      padding: ${theme.spacings.md};
+    }
+  `
+);
+
 const MerchantListHeader: React.FC = () => (
-  <GridContainerHeader>
-    <GridItem gridArea="avatar" />
-    <GridItem gridArea="name">
+  <TableMerchantHeader>
+    <TableColumn gridArea="avatar" />
+    <TableColumn gridArea="name">
       <Text bold fontSize="xs">
         Name
       </Text>
-    </GridItem>
-    <GridItem gridArea="category">
+    </TableColumn>
+    <TableColumn gridArea="category">
       <Text bold fontSize="xs">
         Category
       </Text>
-    </GridItem>
-    <GridItem gridArea="transactions">
+    </TableColumn>
+    <TableColumn gridArea="transactions">
       <Text bold fontSize="xs">
         Total
       </Text>
-    </GridItem>
-    <GridItem gridArea="actions" />
-  </GridContainerHeader>
+    </TableColumn>
+    <TableColumn gridArea="actions" />
+  </TableMerchantHeader>
 );
 
 export default MerchantListHeader;

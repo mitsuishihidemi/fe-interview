@@ -12,11 +12,14 @@ export type SpaceProps = {
   padding?: string;
 };
 
+// I made a simplified version of Space because is a MVP, otherwise
+// I would include other attributes to make it more flexible
 const Space = styled.div<SpaceProps>(
   ({ theme, margin = "0", padding = "0" }) => `
+    box-sizing: border-box;
     display: inline-block;
     margin: ${replaceSpacing(margin, theme)};
-    padding: ${replaceSpacing(padding, theme)};
+    padding: ${replaceSpacing(padding, theme)};    
   `
 );
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Merchant } from "../../../types/merchant";
-import { Wrapper } from "./index.styles";
+import { Table } from "../../../components/Table";
 import MerchantListHeader from "./MerchantListHeader";
 import MerchantListRow from "./MerchantListRow";
 
@@ -9,12 +9,12 @@ type MerchantListProps = {
 };
 
 const MerchantList: React.FC<MerchantListProps> = ({ merchants }) => (
-  <Wrapper>
+  <Table>
     <MerchantListHeader />
     {merchants.map((merchant) => (
       <MerchantListRow key={merchant.id} merchant={merchant} />
     ))}
-  </Wrapper>
+  </Table>
 );
 
 export default MerchantList;
