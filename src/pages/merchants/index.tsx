@@ -14,9 +14,10 @@ const MerchantsPage: React.FC = () => {
 
   return (
     <Container>
-      <Text as="h1" fontSize="xl" bold margin="lg 0">
+      <Text as="h1" fontSize="xl" bold>
         Merchants
       </Text>
+      <Space margin="0 0 lg" />
       <FilterProvider>
         <FilterSelector />
         <Space margin="0 0 md" />
