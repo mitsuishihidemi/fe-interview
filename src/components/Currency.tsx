@@ -5,9 +5,12 @@ type CurrencyProps = {
 };
 
 const Currency: React.FC<CurrencyProps> = ({ children }) => {
-  const formattedValue = new Intl.NumberFormat("en-GB", {
+  const language = process.env.REACT_APP_LANGUAGE;
+  const currency = process.env.REACT_APP_CURRENCY;
+
+  const formattedValue = new Intl.NumberFormat(language, {
     style: "currency",
-    currency: "GBP",
+    currency,
   }).format(children);
 
   return <>{formattedValue}</>;

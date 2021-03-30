@@ -1,5 +1,5 @@
 import React from "react";
-import fallbackImage from "../assets/fallback.jpg";
+import fallbackImage from "../assets/fallback.svg";
 
 export type ImageProps = {
   alt: string;
