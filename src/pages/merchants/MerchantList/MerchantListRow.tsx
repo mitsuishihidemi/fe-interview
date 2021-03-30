@@ -84,7 +84,7 @@ const MerchantListRow: React.FC<MerchantListRowProps> = ({ merchant }) => {
           <IconButton
             data-test-id="see-transitions.cta"
             title="See transactions"
-            aria-label="See transactions"
+            ariaLabel="See transactions"
             icon={IconInfo}
             onClick={() => setShowDetails(!showDetails)}
           />

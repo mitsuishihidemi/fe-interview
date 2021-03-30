@@ -22,7 +22,7 @@ const ToggleBillButton: React.FC<ToggleBillButtonProps> = ({ merchant }) => {
       <IconButton
         data-test-id="remove-bill.cta"
         title="Remove bill"
-        aria-label="Remove bill"
+        ariaLabel="Remove bill"
         icon={DeleteIcon}
         onClick={() => dispatch(updateMerchant({ ...merchant, isBill: false }))}
         disabled={isPending}
@@ -34,7 +34,7 @@ const ToggleBillButton: React.FC<ToggleBillButtonProps> = ({ merchant }) => {
     <IconButton
       data-test-id="add-bill.cta"
       title="Add as bill"
-      aria-label="Add as bill"
+      ariaLabel="Add as bill"
       icon={AddIcon}
       onClick={() => dispatch(updateMerchant({ ...merchant, isBill: true }))}
       disabled={isPending}

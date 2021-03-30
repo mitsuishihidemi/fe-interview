@@ -1,16 +1,14 @@
 import React from "react";
+import { LANGUAGE, CURRENCY } from "../constants";
 
 type CurrencyProps = {
   children: number;
 };
 
 const Currency: React.FC<CurrencyProps> = ({ children }) => {
-  const language = process.env.REACT_APP_LANGUAGE;
-  const currency = process.env.REACT_APP_CURRENCY;
-
-  const formattedValue = new Intl.NumberFormat(language, {
+  const formattedValue = new Intl.NumberFormat(LANGUAGE, {
     style: "currency",
-    currency,
+    currency: CURRENCY,
   }).format(children);
 
   return <>{formattedValue}</>;

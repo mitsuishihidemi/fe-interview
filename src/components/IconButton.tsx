@@ -19,15 +19,17 @@ type ReactButtonProps = React.DetailedHTMLProps<
 
 type IconButtonProps = {
   icon: React.ComponentType;
+  ariaLabel?: string;
   disabled?: boolean;
 };
 
 const IconButton: React.FC<IconButtonProps & ReactButtonProps> = ({
   icon: Icon,
+  ariaLabel,
   ...props
 }) => (
   <Button {...props}>
-    <Icon />
+    <Icon aria-label={ariaLabel} />
   </Button>
 );
 
