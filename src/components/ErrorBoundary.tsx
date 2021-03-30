@@ -1,17 +1,7 @@
 import React from "react";
-import styled from "@emotion/styled";
 import Container from "./Container";
 import Text from "./Text";
-
-const Wrapper = styled.div(
-  ({ theme }) => `  
-    background-color: ${theme.colors.lightGrey};
-    border-radius: ${theme.borderRadius.default};
-    border: ${theme.border};
-    padding: ${theme.spacings.lg};    
-    margin-top: ${theme.spacings.lg};
-  `
-);
+import MessageBox from "./MessageBox";
 
 type ErrorBoundaryProps = {};
 
@@ -37,15 +27,15 @@ class ErrorBoundary extends React.Component<
     if (this.state.hasError) {
       return (
         <Container>
-          <Wrapper>
-            <Text bold fontSize="md" textAlign="center">
+          <MessageBox>
+            <Text bold fontSize="md">
               Something went wront{" "}
               <span role="img" aria-label="Loudly Crying Face">
                 😭
               </span>
             </Text>
-            <Text textAlign="center">Please, refresh the page</Text>
-          </Wrapper>
+            <Text>Please, refresh the page</Text>
+          </MessageBox>
         </Container>
       );
     }

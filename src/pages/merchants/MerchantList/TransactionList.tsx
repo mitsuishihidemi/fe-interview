@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Transaction } from "../../../types/transaction";
 import Text from "../../../components/Text";
+import Currency from "../../../components/Currency";
 import {
   Table,
   TableHeader,
@@ -49,7 +50,9 @@ const TransactionList: React.FC<TransactionListProps> = ({ transactions }) => (
           <Text fontSize="xs">{transaction.date}</Text>
         </TableColumn>
         <TableColumn gridArea="amount">
-          <Text fontSize="xs">${transaction.amount}</Text>
+          <Text fontSize="xs">
+            <Currency>{transaction.amount}</Currency>
+          </Text>
         </TableColumn>
       </TableTransactionRow>
     ))}

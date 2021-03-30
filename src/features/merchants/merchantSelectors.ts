@@ -30,5 +30,5 @@ export const selectMerchantsFilteredByBill = (
 export const selectShouldFetchMerchants = (state: RootState): boolean =>
   state.merchants.status === "idle";
 
-export const selectIsFetchMerchantsPending = (state: RootState): boolean =>
+export const selectIsMerchantsPending = (state: RootState): boolean =>
   state.merchants.status === "pending";

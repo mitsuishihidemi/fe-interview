@@ -5,6 +5,7 @@ import Text from "../../../components/Text";
 import Space from "../../../components/Space";
 import IconButton from "../../../components/IconButton";
 import IconInfo from "../../../icons/InfoIcon";
+import Currency from "../../../components/Currency";
 import { Merchant } from "../../../types/merchant";
 import { getTotalTransacionsByMerchant } from "../../../features/merchants/merchantUtils";
 import { TableRow, TableColumn } from "../../../components/Table";
@@ -17,7 +18,7 @@ const TableMerchantRow = styled(TableRow)(
       'avatar  name     transactions actions'
       'avatar  category transactions actions'
       'details details  details      details';    
-    grid-template-columns: 50px auto 60px 60px;    
+    grid-template-columns: 50px auto auto 60px;    
     padding: ${theme.spacings.md};
 
     @media (min-width: ${theme.breakpoints.lg}) {      
@@ -26,6 +27,15 @@ const TableMerchantRow = styled(TableRow)(
         'details details details  details      details';
       grid-template-columns: 50px 1fr 1fr 1fr 60px;    
     } 
+  `
+);
+
+const TextTransactions = styled(Text)(
+  ({ theme }) => `
+    text-align: right;
+    @media (min-width: ${theme.breakpoints.lg}) {
+      text-align: left;
+    }
   `
 );
 
@@ -53,7 +63,9 @@ const MerchantListRow: React.FC<MerchantListRowProps> = ({ merchant }) => {
         <Text>{merchant.category}</Text>
       </TableColumn>
       <TableColumn gridArea="transactions">
-        <Text bold>${getTotalTransacionsByMerchant(merchant)}</Text>
+        <TextTransactions bold>
+          <Currency>{getTotalTransacionsByMerchant(merchant)}</Currency>
+        </TextTransactions>
       </TableColumn>
       <TableColumn gridArea="actions">
         <IconButton

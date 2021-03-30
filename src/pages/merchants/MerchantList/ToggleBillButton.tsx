@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectIsFetchMerchantsPending } from "../../../features/merchants/merchantSelectors";
+import { selectIsMerchantsPending } from "../../../features/merchants/merchantSelectors";
 import { updateMerchant } from "../../../features/merchants/merchantSlice";
 import { FilterContext } from "../FilterProvider";
 import { Merchant } from "../../../types/merchant";
@@ -15,7 +15,7 @@ type ToggleBillButtonProps = {
 const ToggleBillButton: React.FC<ToggleBillButtonProps> = ({ merchant }) => {
   const dispatch = useDispatch();
   const { isBill } = useContext(FilterContext);
-  const isPending = useSelector(selectIsFetchMerchantsPending);
+  const isPending = useSelector(selectIsMerchantsPending);
 
   if (isBill) {
     return (
