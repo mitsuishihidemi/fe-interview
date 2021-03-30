@@ -15,11 +15,20 @@ import ToggleBillButton from "./ToggleBillButton";
 const TableMerchantRow = styled(TableRow)(
   ({ theme }) => `
     grid-template-areas:
-      'avatar  name     transactions actions'
-      'avatar  category transactions actions'
-      'details details  details      details';    
-    grid-template-columns: 50px auto auto 60px;    
+      'avatar  name         actions'
+      'avatar  category     actions'
+      'avatar  transactions actions'
+      'details details      details';    
+    grid-template-columns: 50px auto 60px;    
     padding: ${theme.spacings.md};
+
+    @media (min-width: ${theme.breakpoints.md}) {
+      grid-template-areas:
+        'avatar  name     transactions actions'
+        'avatar  category transactions actions'        
+        'details details  details      details';    
+      grid-template-columns: 50px 1fr 1fr 60px;    
+    }
 
     @media (min-width: ${theme.breakpoints.lg}) {      
       grid-template-areas: 
@@ -30,12 +39,15 @@ const TableMerchantRow = styled(TableRow)(
   `
 );
 
-const TextTransactions = styled(Text)(
+const TransactionText = styled(Text)(
   ({ theme }) => `
-    text-align: right;
-    @media (min-width: ${theme.breakpoints.lg}) {
-      text-align: left;
-    }
+    margin-top: ${theme.spacings.md};
+    font-size: ${theme.fontSizes.md};
+
+    @media (min-width: ${theme.breakpoints.md}) {
+      margin-top: 0;
+      font-size: ${theme.fontSizes.sm};
+    }    
   `
 );
 
@@ -63,19 +75,21 @@ const MerchantListRow: React.FC<MerchantListRowProps> = ({ merchant }) => {
         <Text>{merchant.category}</Text>
       </TableColumn>
       <TableColumn gridArea="transactions">
-        <TextTransactions bold>
+        <TransactionText bold>
           <Currency>{getTotalTransacionsByMerchant(merchant)}</Currency>
-        </TextTransactions>
+        </TransactionText>
       </TableColumn>
       <TableColumn gridArea="actions">
-        <IconButton
-          title="See transactions"
-          aria-label="See transactions"
-          icon={IconInfo}
-          onClick={() => setShowDetails(!showDetails)}
-        />
-        <Space margin="0 sm 0 0" />
-        <ToggleBillButton merchant={merchant} />
+        <Text textAlign="right">
+          <IconButton
+            title="See transactions"
+            aria-label="See transactions"
+            icon={IconInfo}
+            onClick={() => setShowDetails(!showDetails)}
+          />
+          <Space margin="0 sm 0 0" />
+          <ToggleBillButton merchant={merchant} />
+        </Text>
       </TableColumn>
       {showDetails && (
         <TableColumn gridArea="details">

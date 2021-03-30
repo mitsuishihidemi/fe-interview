@@ -5,7 +5,7 @@ const Button = styled.button(
   ({ theme, disabled }) => `
     background-color: ${theme.colors.transparent};
     border: 0;
-    color: ${disabled ? theme.colors.grey : theme.colors.black}
+    color: ${disabled ? theme.colors.grey : theme.colors.black};
     cursor: pointer;
     line-height: 0;    
     padding: 0;

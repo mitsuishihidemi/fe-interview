@@ -14,7 +14,7 @@ const MerchantsPage: React.FC = () => {
 
   return (
     <Container>
-      <Text as="h1" fontSize="lg" bold margin="lg 0">
+      <Text as="h1" fontSize="xl" bold margin="lg 0">
         Merchants
       </Text>
       <FilterProvider>

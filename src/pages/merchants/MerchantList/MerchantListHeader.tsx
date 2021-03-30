@@ -31,7 +31,7 @@ const MerchantListHeader: React.FC = () => (
     </TableColumn>
     <TableColumn gridArea="transactions">
       <Text bold fontSize="xs">
-        Total
+        Transactions Total
       </Text>
     </TableColumn>
     <TableColumn gridArea="actions" />

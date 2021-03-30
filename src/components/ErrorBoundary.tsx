@@ -2,6 +2,7 @@ import React from "react";
 import Container from "./Container";
 import Text from "./Text";
 import MessageBox from "./MessageBox";
+import Space from "./Space";
 
 type ErrorBoundaryProps = {};
 
@@ -27,6 +28,7 @@ class ErrorBoundary extends React.Component<
     if (this.state.hasError) {
       return (
         <Container>
+          <Space margin="lg 0 0" />
           <MessageBox>
             <Text bold fontSize="md">
               Something went wront{" "}

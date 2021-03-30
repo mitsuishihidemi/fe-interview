@@ -28,6 +28,7 @@ export interface ThemeInterface {
     sm: string;
     md: string;
     lg: string;
+    xl: string;
   };
   fontWeights: {
     normal: number;
@@ -45,9 +46,9 @@ const colors = {
 };
 
 const breakpoints = {
-  sm: "30em",
-  md: "48em",
-  lg: "62em",
+  sm: "576px",
+  md: "768px",
+  lg: "992px",
 };
 
 const spacings = {
@@ -64,8 +65,9 @@ const borderRadius = {
 const fontSizes = {
   xs: "0.9rem",
   sm: "1rem",
-  md: "1.5rem",
-  lg: "2rem",
+  md: "1.25rem",
+  lg: "1.5rem",
+  xl: "2rem",
 };
 
 const fontWeights = {

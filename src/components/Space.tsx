@@ -21,7 +21,7 @@ const Space = styled.div<SpaceProps>(
     display: inline-block;
     margin: ${replaceSpacing(margin, theme)};
     padding: ${replaceSpacing(padding, theme)};    
-    ${fullWidth && "width: 100%;"}
+    width: ${fullWidth ? "100%" : "inherit"};    
   `
 );
 
