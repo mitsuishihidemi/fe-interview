@@ -45,7 +45,7 @@ const TransactionList: React.FC<TransactionListProps> = ({ transactions }) => (
       </TableColumn>
     </TableTransactionHeader>
     {transactions.map((transaction) => (
-      <TableTransactionRow key={transaction.id}>
+      <TableTransactionRow key={transaction.id} data-test-id="transaction.row">
         <TableColumn gridArea="date">
           <Text fontSize="xs">{transaction.date}</Text>
         </TableColumn>

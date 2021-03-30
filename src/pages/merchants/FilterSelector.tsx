@@ -7,10 +7,18 @@ const FilterSelector: React.FC = () => {
 
   return (
     <TabContainer>
-      <Tab selected={isBill} onClick={() => setIsBill(true)}>
+      <Tab
+        data-test-id="bills.tab"
+        selected={isBill}
+        onClick={() => setIsBill(true)}
+      >
         Bills
       </Tab>
-      <Tab selected={!isBill} onClick={() => setIsBill(false)}>
+      <Tab
+        data-test-id="potential-bills.tab"
+        selected={!isBill}
+        onClick={() => setIsBill(false)}
+      >
         Potential Bills
       </Tab>
     </TabContainer>
