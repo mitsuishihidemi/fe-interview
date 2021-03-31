@@ -26,10 +26,11 @@
     "api": "json-server --watch db.json --port 3002",
     "start": "PORT=3001 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll",
+    "test:ci": "CI=true react-scripts test",
     "eject": "react-scripts eject",
-    "e2e": "cypress run",
-    "e2e:dev": "cypress open"
+    "e2e": "cypress open",
+    "e2e:ci": "cypress run"
   },
   "eslintConfig": {
     "extends": [
