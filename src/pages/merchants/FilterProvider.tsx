@@ -1,18 +1,14 @@
 import React, { useState } from "react";
 
-interface ContextInterface {
+export interface FilterContextInterface {
   isBill: boolean;
   setIsBill: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const defaultContextInteface: ContextInterface = {
+export const FilterContext = React.createContext<FilterContextInterface>({
   isBill: true,
   setIsBill: () => {},
-};
-
-export const FilterContext = React.createContext<ContextInterface>(
-  defaultContextInteface
-);
+});
 
 const FilterProvider: React.FC = ({ children }) => {
   const [isBill, setIsBill] = useState(true);

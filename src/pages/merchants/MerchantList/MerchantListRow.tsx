@@ -59,7 +59,7 @@ const MerchantListRow: React.FC<MerchantListRowProps> = ({ merchant }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <TableMerchantRow data-test-id="merchant.row" data-id={merchant.id}>
+    <TableMerchantRow data-testid="merchant.row" data-id={merchant.id}>
       <TableColumn gridArea="avatar">
         <Avatar
           alt={`${merchant.name} icon`}
@@ -82,7 +82,7 @@ const MerchantListRow: React.FC<MerchantListRowProps> = ({ merchant }) => {
       <TableColumn gridArea="actions">
         <Text textAlign="right" as="div">
           <IconButton
-            data-test-id="see-transitions.cta"
+            data-testid="see-transitions.cta"
             title="See transactions"
             ariaLabel="See transactions"
             icon={IconInfo}

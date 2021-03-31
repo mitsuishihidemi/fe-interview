@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`selectMerchants should select merchants with category names 1`] = `
+Array [
+  Object {
+    "category": "Phone",
+    "categoryId": 1,
+    "iconUrl": "https://pbs.twimg.com/profile_images/1151788824093188097/wHfb5mYZ_bigger.png",
+    "id": "5a5caa1efe33900100fd8ed5",
+    "isBill": true,
+    "name": "Vodafone",
+    "transactions": Array [
+      Object {
+        "amount": 12.34,
+        "date": "2018-01-13",
+        "id": 36,
+      },
+      Object {
+        "amount": 14.34,
+        "date": "2018-02-13",
+        "id": 37,
+      },
+      Object {
+        "amount": 15.54,
+        "date": "2018-03-13",
+        "id": 38,
+      },
+      Object {
+        "amount": 11.34,
+        "date": "2018-04-13",
+        "id": 39,
+      },
+      Object {
+        "amount": 18.99,
+        "date": "2018-05-13",
+        "id": 40,
+      },
+    ],
+  },
+  Object {
+    "category": "Bank Charges",
+    "categoryId": 3,
+    "iconUrl": "https://pbs.twimg.com/profile_images/1280422740638470147/aBXwvFOs_bigger.jpg",
+    "id": "5a5caad4fe33900100fd8ed7",
+    "isBill": true,
+    "name": "HSBC Mortgage",
+    "transactions": Array [
+      Object {
+        "amount": 1023,
+        "date": "2018-01-01",
+        "id": 1,
+      },
+      Object {
+        "amount": 1023,
+        "date": "2018-02-01",
+        "id": 2,
+      },
+      Object {
+        "amount": 1023,
+        "date": "2018-03-01",
+        "id": 3,
+      },
+      Object {
+        "amount": 1023,
+        "date": "2018-04-01",
+        "id": 4,
+      },
+      Object {
+        "amount": 1023,
+        "date": "2018-05-01",
+        "id": 5,
+      },
+    ],
+  },
+  Object {
+    "category": "TV",
+    "categoryId": 2,
+    "iconUrl": "https://pbs.twimg.com/profile_images/1235992718171467776/PaX2Bz1S_bigger.jpg",
+    "id": "5a5cab18fe33900100fd8ed8",
+    "isBill": false,
+    "name": "Netflix",
+    "transactions": Array [
+      Object {
+        "amount": 19,
+        "date": "2018-01-02",
+        "id": 6,
+      },
+      Object {
+        "amount": 19,
+        "date": "2018-02-02",
+        "id": 7,
+      },
+      Object {
+        "amount": 19,
+        "date": "2018-03-02",
+        "id": 8,
+      },
+      Object {
+        "amount": 19,
+        "date": "2018-04-02",
+        "id": 9,
+      },
+      Object {
+        "amount": 19,
+        "date": "2018-05-02",
+        "id": 10,
+      },
+    ],
+  },
+]
+`;
+
+exports[`selectMerchantsFilteredByBill should select merchants filtered by isBill 1`] = `
+Array [
+  Object {
+    "category": "Phone",
+    "categoryId": 1,
+    "iconUrl": "https://pbs.twimg.com/profile_images/1151788824093188097/wHfb5mYZ_bigger.png",
+    "id": "5a5caa1efe33900100fd8ed5",
+    "isBill": true,
+    "name": "Vodafone",
+    "transactions": Array [
+      Object {
+        "amount": 12.34,
+        "date": "2018-01-13",
+        "id": 36,
+      },
+      Object {
+        "amount": 14.34,
+        "date": "2018-02-13",
+        "id": 37,
+      },
+      Object {
+        "amount": 15.54,
+        "date": "2018-03-13",
+        "id": 38,
+      },
+      Object {
+        "amount": 11.34,
+        "date": "2018-04-13",
+        "id": 39,
+      },
+      Object {
+        "amount": 18.99,
+        "date": "2018-05-13",
+        "id": 40,
+      },
+    ],
+  },
+  Object {
+    "category": "Bank Charges",
+    "categoryId": 3,
+    "iconUrl": "https://pbs.twimg.com/profile_images/1280422740638470147/aBXwvFOs_bigger.jpg",
+    "id": "5a5caad4fe33900100fd8ed7",
+    "isBill": true,
+    "name": "HSBC Mortgage",
+    "transactions": Array [
+      Object {
+        "amount": 1023,
+        "date": "2018-01-01",
+        "id": 1,
+      },
+      Object {
+        "amount": 1023,
+        "date": "2018-02-01",
+        "id": 2,
+      },
+      Object {
+        "amount": 1023,
+        "date": "2018-03-01",
+        "id": 3,
+      },
+      Object {
+        "amount": 1023,
+        "date": "2018-04-01",
+        "id": 4,
+      },
+      Object {
+        "amount": 1023,
+        "date": "2018-05-01",
+        "id": 5,
+      },
+    ],
+  },
+]
+`;

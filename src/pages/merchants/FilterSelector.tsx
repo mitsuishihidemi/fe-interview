@@ -8,14 +8,14 @@ const FilterSelector: React.FC = () => {
   return (
     <TabContainer>
       <Tab
-        data-test-id="bills.tab"
+        data-testid="bills.tab"
         selected={isBill}
         onClick={() => setIsBill(true)}
       >
         Bills
       </Tab>
       <Tab
-        data-test-id="potential-bills.tab"
+        data-testid="potential-bills.tab"
         selected={!isBill}
         onClick={() => setIsBill(false)}
       >

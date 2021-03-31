@@ -5,10 +5,10 @@ import {
 } from "@reduxjs/toolkit";
 import { Category } from "../../types/category";
 import { SliceState, defaultInitialState } from "../../types/shared";
-import { MERCHANTS_API } from "../../constants";
+import { CATEGORIES_API } from "../../constants";
 
 export const fetchCategories = createAsyncThunk("fetchCategories", async () => {
-  const response = await fetch(MERCHANTS_API).then((d) => d.json());
+  const response = await fetch(CATEGORIES_API).then((d) => d.json());
   return response as Category[];
 });
 

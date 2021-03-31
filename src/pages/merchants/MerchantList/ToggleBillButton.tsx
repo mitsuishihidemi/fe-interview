@@ -20,7 +20,7 @@ const ToggleBillButton: React.FC<ToggleBillButtonProps> = ({ merchant }) => {
   if (isBill) {
     return (
       <IconButton
-        data-test-id="remove-bill.cta"
+        data-testid="remove-bill.cta"
         title="Remove bill"
         ariaLabel="Remove bill"
         icon={DeleteIcon}
@@ -32,7 +32,7 @@ const ToggleBillButton: React.FC<ToggleBillButtonProps> = ({ merchant }) => {
 
   return (
     <IconButton
-      data-test-id="add-bill.cta"
+      data-testid="add-bill.cta"
       title="Add as bill"
       ariaLabel="Add as bill"
       icon={AddIcon}
