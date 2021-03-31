@@ -17,7 +17,7 @@ export const fetchMerchants = createAsyncThunk("fetchMerchants", async () => {
 export const updateMerchant = createAsyncThunk(
   "updateMerchant",
   async (merchant: Merchant) => {
-    const response = await fetch(MERCHANTS_API, {
+    const response = await fetch(`${MERCHANTS_API}/${merchant.id}`, {
       method: "PATCH",
       body: JSON.stringify(merchant),
       headers: { "Content-Type": "application/json" },
